@@ -27,7 +27,11 @@ export async function streamMessage(
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
       contents,
-      generationConfig: { maxOutputTokens: 80, temperature: 0.3 },
+      generationConfig: {
+        maxOutputTokens: 80,
+        temperature: 0.3,
+        thinkingConfig: { thinkingBudget: 0 },
+      },
     }),
   })
 
