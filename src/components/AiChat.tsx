@@ -48,10 +48,29 @@ export default function AiChat() {
     <>
       <button
         onClick={() => setOpen(!open)}
-        className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-gray-800 text-white shadow-lg hover:shadow-xl hover:bg-gray-700 transition-all duration-200 flex items-center justify-center text-2xl"
+        className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-[#F2A33C] text-white shadow-lg hover:shadow-xl hover:brightness-105 transition-all duration-200 flex items-center justify-center overflow-hidden"
         title="ИИ-помощник"
+        aria-label={open ? 'Закрыть помощника' : 'Открыть помощника'}
       >
-        {open ? '✕' : '?'}
+        {open ? (
+          <span className="text-2xl text-white leading-none">✕</span>
+        ) : (
+          <svg viewBox="0 0 64 64" className="w-10 h-10" aria-hidden="true">
+            <polygon points="12,22 18,8 28,20" fill="#F2A33C" stroke="#B86B1C" strokeWidth="1.5" strokeLinejoin="round" />
+            <polygon points="14.5,19 18,12 23.5,19" fill="#F7C58F" />
+            <polygon points="52,22 46,8 36,20" fill="#F2A33C" stroke="#B86B1C" strokeWidth="1.5" strokeLinejoin="round" />
+            <polygon points="49.5,19 46,12 40.5,19" fill="#F7C58F" />
+            <ellipse cx="32" cy="36" rx="22" ry="20" fill="#F2A33C" stroke="#B86B1C" strokeWidth="1.5" />
+            <ellipse cx="24" cy="32" rx="4.2" ry="4.8" fill="#ffffff" />
+            <ellipse cx="40" cy="32" rx="4.2" ry="4.8" fill="#ffffff" />
+            <circle cx="24" cy="33" r="1.8" fill="#1f1f1f" />
+            <circle cx="40" cy="33" r="1.8" fill="#1f1f1f" />
+            <polygon points="29.5,39 34.5,39 32,42.5" fill="#C85C2E" />
+            <path d="M32 42.5 Q29 46 26 45" stroke="#5a3b1e" strokeWidth="1.6" fill="none" strokeLinecap="round" />
+            <path d="M32 42.5 Q35 46 38 45" stroke="#5a3b1e" strokeWidth="1.6" fill="none" strokeLinecap="round" />
+            <path d="M8 34 L18 33 M8 38 L18 37 M46 33 L56 34 M46 37 L56 38" stroke="#5a3b1e" strokeWidth="1.2" strokeLinecap="round" />
+          </svg>
+        )}
       </button>
 
       {open && (
