@@ -36,12 +36,11 @@ export default function HomePage() {
     <section className="min-h-screen px-6 py-12 flex flex-col items-center">
       <div className="animate-fade-in-up w-full max-w-3xl mb-10">
         <div className="rounded-2xl overflow-hidden bg-gray-100 border border-gray-200 aspect-video flex items-center justify-center">
-          {/* Подставь путь к видео в атрибут src */}
           <video
             className="w-full h-full object-cover"
             controls
-            src=""
-            poster=""
+            preload="metadata"
+            src={`${import.meta.env.BASE_URL}video/projectit.mp4`}
           />
         </div>
       </div>

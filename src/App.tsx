@@ -9,7 +9,7 @@ import QuizPage from "./pages/QuizPage"
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />
