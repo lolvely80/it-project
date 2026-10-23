@@ -33,7 +33,7 @@ export async function streamMessage(
 
   if (!res.ok) {
     const err = await res.text()
-    throw new Error(`Gemini: ${res.status}`)
+    throw new Error(`Gemini: ${res.status} ${err}`)
   }
 
   const reader = res.body!.getReader()
